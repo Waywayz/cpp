@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+// #include <ctype.h>
 
 PhoneBook::PhoneBook()
 {
@@ -30,29 +31,35 @@ void    PhoneBook::AddContact(void)
     this->_contact[this->_index].init_contact();
 }
 
-void    PhoneBook::PrintList(void)
+void     PhoneBook::PrintList(void) const
 {
     std::cout << std::endl;
+    std::cout << "------------- LIST OF CONTACTS -------------" << std::endl;
     for (int i = 1; i < 8; i++)
         this->_contact[i].print_contact(i);
     std::cout << std::endl;
 }
 
-/*
-    UTILISER TRY && CATCH ICI
-*/
-void    PhoneBook::IndexContact(void)
+void    PhoneBook::IndexContact(void) const
 {
     std::cout << "Enter index of the contact > ";
-    std::string input;
+    std::string input = "";
     std::cin >> input;
-
-    int index = std::stoi(input);
-    if (index >= 1 && index <= 8)
-        this->_contact[index].print_one(index);
-    else
+    try
+    {
+        int index = std::stoi(input);
+        if (index >= 1 && index <= 8)
+            this->_contact[index].print_one(index);
+        else
+        {
+            std::cin.clear();
+            std::cout << "Invalid index" << std::endl;
+        }
+    }
+    catch (const std::invalid_argument& e)
     {
         std::cin.clear();
-        std::cout << "Invalid index." << std::endl;
-    } 
+        std::cout << "Invalid caractere" << std::endl;
+        this->IndexContact();
+    }
 }

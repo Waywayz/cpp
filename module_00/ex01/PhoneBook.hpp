@@ -2,7 +2,6 @@
 # define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-#include <iostream>
 
 class PhoneBook
 {
@@ -18,8 +17,8 @@ public:
 
     void    Welcome() const;
     void    AddContact();
-    void    PrintList();
-    void    IndexContact();
+    void    PrintList() const;
+    void    IndexContact() const;
 };
 
 #endif

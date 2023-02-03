@@ -14,6 +14,7 @@ private:
     std::string _nickname;
     std::string _phonenumber;
     std::string _darkestsecret;
+    std::string _add_info(std::string str) const;
 
 public:
 
@@ -21,7 +22,6 @@ public:
     ~Contact();
 
     void        init_contact();
-    std::string add_info(std::string str) const;
     void        print_contact(int i) const;
     void        print_one(int index) const;
 
