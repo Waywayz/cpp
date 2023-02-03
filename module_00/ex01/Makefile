@@ -35,7 +35,7 @@ clean:
 	@$(RM) $(OBJDIR) $(OBJ)
 	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
 
-fclean:
+fclean: clean
 	@$(RM) $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
