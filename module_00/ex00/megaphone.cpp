@@ -1,5 +1,15 @@
 #include <iostream>
 
+/*
+    :: == namespace
+    std == precise que j'utilise la biblioteque standard
+    cout == sortie standard
+    cin == entree standard
+    toupper == fontion carac min -> maj
+    endl == retour a la ligne
+    <<  ou >> == redirection de flux
+*/
+
 int main(int ac, char **av)
 {
     if (ac > 1)
