@@ -35,14 +35,14 @@ void     PhoneBook::PrintList(void) const
 {
     std::cout << std::endl;
     std::cout << "------------- LIST OF CONTACTS -------------" << std::endl;
-    for (int i = 1; i < 8; i++)
+    for (int i = 1; i <= 8; i++)
         this->_contact[i].print_contact(i);
     std::cout << std::endl;
 }
 
 void    PhoneBook::IndexContact(void) const
 {
-    std::cout << "Enter index of the contact > ";
+    std::cout << "Enter index of the contact > " << std::flush;
     std::string input = "";
     std::cin >> input;
     try
