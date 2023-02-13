@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): 
 	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
-	@ $(CC) $(FLAGS) megaphone.cpp -o $(NAME)
+	@ $(CC) $(CFLAGS) megaphone.cpp -o $(NAME)
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 clean:
@@ -29,4 +29,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all clean fclean re

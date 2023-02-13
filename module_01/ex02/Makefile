@@ -4,15 +4,15 @@ GRAY		=	\e[33;2;37m
 RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
-NAME = ZombieHorde
+NAME = Brain
 
 OBJDIR = .objFiles
 
 OBJ	= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 
-FILES = main Zombie zombieHorde
+FILES = main
 
-HEADER = Zombie.hpp
+HEADER =
 
 SRC	= $(FILES:=.cpp)
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJ) $(HEADER)
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(OPTS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJDIR) $(OBJ)

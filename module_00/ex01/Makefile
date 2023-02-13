@@ -24,12 +24,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
 	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
-	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
-	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
+	@$(CC) $(OBJ) -o $(NAME)
+	@printf "$(GREEN)- Executable ready.\n$(RESET)"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJDIR) $(OBJ)
@@ -41,4 +41,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all clean fclean re
