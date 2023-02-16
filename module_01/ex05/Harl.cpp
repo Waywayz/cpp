@@ -41,29 +41,3 @@ void    Harl::complain( std::string level ) {
         }
     }
 }
-
-// void displayMessage(void (*message)()) {
-//     int choice;
-//     std::cout << "Choose a message (1-4): ";
-//     std::cin >> choice;
-
-//     switch (choice) {
-//         case 1:
-//             message = message1;
-//             break;
-//         case 2:
-//             message = message2;
-//             break;
-//         case 3:
-//             message = message3;
-//             break;
-//         case 4:
-//             message = message4;
-//             break;
-//         default:
-//             std::cout << "Invalid choice" << std::endl;
-//             return;
-//     }
-
-//     message();
-// }
