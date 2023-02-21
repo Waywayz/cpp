@@ -18,7 +18,6 @@ public:
     Fixed(const Fixed& other);
     Fixed(float const value);
     Fixed   &operator=(const Fixed &other);
-    friend std::ostream&   operator<<(std::ostream& out, const Fixed& fixed);
     bool    operator>(const Fixed &other) const;
     bool    operator<(const Fixed &other) const;
     bool    operator>=(const Fixed &other) const;
@@ -45,6 +44,6 @@ public:
     static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
-
+std::ostream&   operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

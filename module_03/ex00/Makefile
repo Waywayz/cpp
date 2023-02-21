@@ -4,15 +4,15 @@ GRAY		=	\e[33;2;37m
 RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
-NAME = bsp
+NAME = ClapTrap
 
 OBJDIR = .objFiles
 
 OBJ	= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 
-FILES = main Fixed Point bsp
+FILES = main ClapTrap
 
-HEADER = Fixed.hpp Point.hpp
+HEADER = ClapTrap.hpp
 
 SRC	= $(FILES:=.cpp)
 
