@@ -7,4 +7,5 @@ int main() {
     scav.takeDamage(5);
     scav.beRepaired(10);
     scav.guardGate();
+    return 0;
 }

@@ -8,7 +8,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap " << _name << " destructed!" << std::endl;
+    std::cout << "ScavTrap " << _name << " was destructed!" << std::endl;
 }
 
 void    ScavTrap::attack(const std::string& target) {
