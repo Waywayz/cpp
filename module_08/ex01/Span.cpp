@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:04:42 by rovillar          #+#    #+#             */
-/*   Updated: 2023/06/14 16:08:13 by rovillar         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:16:01 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,12 @@ void	Span::printSpan()
 	}
 }
 
-const char *Span::TooFewCount::what() const _NOEXCEPT
+const char *Span::TooFewCount::what() const throw()
 {
 	return("\033[31m\nToofewcount!!\033[0m");
 }
 
-const char* Span::TooMuchCount::what() const _NOEXCEPT
+const char* Span::TooMuchCount::what() const throw()
 {
 	return ("\033[31m\nThere are already N elements stored!!\n\033[0m");
 }

@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 14:59:01 by rovillar          #+#    #+#             */
-/*   Updated: 2023/06/14 16:08:37 by rovillar         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:16:24 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ public:
 	class TooMuchCount: public std::exception
 	{
   		public:
-    		virtual const char* what() const _NOEXCEPT;
+    		virtual const char* what() const throw();
 	};
 
 	class TooFewCount: public std::exception
 	{
 		public:
-			virtual const char* what() const _NOEXCEPT;
+			virtual const char* what() const throw();
 	};
 };
 
