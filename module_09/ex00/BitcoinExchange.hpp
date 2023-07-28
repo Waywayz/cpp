@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 00:27:17 by rovillar          #+#    #+#             */
-/*   Updated: 2023/07/26 04:13:53 by rovillar         ###   ########.fr       */
+/*   Updated: 2023/07/28 05:13:09 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
     bool    isDateInCorrectFormat(const std::string& date);
     bool    isValidDate(const std::string& date);
     bool    isRateInCorrectFormat(const std::string& rate);
+    void    sortByLine(std::ifstream& input_db, std::ifstream& internal_db);
 };
 
 #endif
