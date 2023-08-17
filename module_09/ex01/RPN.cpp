@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 05:20:43 by rovillar          #+#    #+#             */
-/*   Updated: 2023/07/28 05:47:39 by rovillar         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:26:10 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,42 @@ bool RPN::valid_expression(const std::string& expr)
 
 long long RPN::calculate(const std::string& expr)
 {
-    
+    int left;
+    int right;
+    int result;
+    std::stringstream postfix(expr);
+    std::stack<int> temp;
+    std::string s;
+
+    while (postfix >> s)
+    {
+        if (s == "+" || s == "-" || s == "/" || s == "*")
+        {
+            if (temp.size() < 2)
+                throw NoResultException();                
+            // Pull out top two elements
+            right = temp.top();
+            temp.pop();
+            left = temp.top();
+            temp.pop();
+            switch (s.at(0))
+            {
+                case '+': result =  left + right ; break;
+                case '-': result =  left - right ; break;
+                case '/':
+                    if (right != 0)
+                        result =  left / right; 
+                    else
+                        throw DivisionByZeroException();
+                break;
+                case '*': result =  left * right ; break;
+            }
+            temp.push(result);
+        }
+        else
+            temp.push(ft_stoi(s));
+    }
+	return temp.top();
 }
 
 

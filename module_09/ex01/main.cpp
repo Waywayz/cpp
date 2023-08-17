@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 05:20:41 by rovillar          #+#    #+#             */
-/*   Updated: 2023/07/28 05:29:36 by rovillar         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:27:06 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int ac, char **av)
     if (ac != 2)
         return ft_error("invalid number of arguments");
 
-	if (!RPN::valid_expression(av[1]))
+	else if (!RPN::valid_expression(av[1]))
         return ft_error("invalid expression");
 
     try {
